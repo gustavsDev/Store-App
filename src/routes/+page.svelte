@@ -1,27 +1,29 @@
 <script>
+  import Item from "../components/Item.svelte";
+
   let temp = [
     {
       title: "Mega diccker",
-      description: "Just a regular diccker"
+      description: "Just a regular diccker",
     },
     {
       title: "Cocker the brit'",
-      description: "yeyeye yeye"
+      description: "yeyeye yeye",
     },
     {
       title: "Free coke",
-      description: "A coccke zero"
-    }
+      description: "A coccke zero",
+    },
   ];
 
   let items = [];
 
-  for(let i = 0; i < 11; i++) items = [...items, ...temp];
+  for (let i = 0; i < 11; i++) items = [...items, ...temp];
 </script>
 
 <h1>WEBSTORE!!!</h1>
 
-<hr>
+<hr />
 
 <h3>Categories</h3>
 <ul>
@@ -30,29 +32,20 @@
   <li>Rocket parts & fuels</li>
 </ul>
 
-<hr>
+<hr />
 
 <h3>Products</h3>
 
 <div class="items">
   {#each items as item}
-  <div class="item">
-    <p>{item.title}</p>
-    <p style="color: gray; font-size: 0.8em;">{item.description}</p>
-  </div>
+    <Item title={item.title} description={item.description} />
   {/each}
 </div>
 
 <style>
   .items {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1rem;
-    grid-auto-rows: minmax(100px, auto);
-  }
-  .item {
-    list-style: none; 
-    background-color: #EEE;
-    padding: 1rem;
   }
 </style>
