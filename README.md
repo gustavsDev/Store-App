@@ -1,6 +1,6 @@
 # Svelte Store App 
 
-A fully functional web store built with [Svelte](https://svelte.dev/) and (NodeJS)[https://nodejs.org/en] with (Express.js)[https://expressjs.com/]
+A fully functional web store built with [Svelte](https://svelte.dev/) and [NodeJS](https://nodejs.org/en) with [Express.js](https://expressjs.com/)
 
 ## Features
 
