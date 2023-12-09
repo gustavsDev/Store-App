@@ -10,8 +10,6 @@ A fully functional web store built with [Svelte](https://svelte.dev/) and [NodeJ
 
 ## Developing
 
-First, install the project on your local machine.
-
 ```
 # clone repo
 git clone https://github.com/gustavsDev/Store-App.git Store_App
@@ -25,12 +23,12 @@ npm install
 
 ## Building
 
-Svelte needs to be pre-build before launching the node.js server.
+Svelte needs to be compiled before launching the node.js server.
 
 Building the Svelte app is done with the `npm run build` command.
 
 For starting the server, run `npm run start`
 
-*OR*
+*or*
 
 An command for running them all: `npm run all`
