@@ -6,7 +6,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
 	</head>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+		}
+		#sub-body {
+			width: 70vw;
+			margin: auto;
+		}
+
+		@media only screen 
+		and (max-device-width: 600px) {
+			#sub-body {
+				width: auto;
+				margin: auto;
+			}
+		}
+	</style>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
+		<div id="sub-body">%sveltekit.body%</div>
 	</body>
 </html>
