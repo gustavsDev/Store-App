@@ -38,7 +38,7 @@
         price={item.price}
         amount={item.amount}
         id={item.id}
-        image={item.image}
+        src={"/images/" + item.image}
       />
     {/each}
   </div>

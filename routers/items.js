@@ -21,6 +21,7 @@ router.get("/", async (req, res) => {
   const client = await getClient();
   const data = await client.query(`SELECT * FROM items;`);
   res.json(data.rows);
+  await client.end();
 });
 
 router.get("/:id", async (req, res) => {
@@ -30,6 +31,7 @@ router.get("/:id", async (req, res) => {
 
   const data = await client.query(`SELECT * FROM items WHERE id=${id};`);
   res.json(data.rows);
+  await client.end();
 });
 
 router.post("/", upload.single("image"), async (req, res) => {
@@ -44,6 +46,7 @@ router.post("/", upload.single("image"), async (req, res) => {
 
   const data = await client.query(`INSERT INTO items(title, description, price, discount, amount, image) VALUES ('${title}', '${description}', ${price}, ${discount}, ${amount}, '${image}');`);
   res.json("Data inserted!");
+  await client.end();
 });
 
 router.delete("/:id", async (req, res) => {
@@ -53,6 +56,7 @@ router.delete("/:id", async (req, res) => {
 
   const data = await client.query(`DELETE FROM items WHERE id=${id};`);
   res.json(data.rows);
+  await client.end();
 });
 
 export { router as default };

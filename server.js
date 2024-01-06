@@ -32,5 +32,9 @@ app.use(express.json());
 import items from "./routers/items.js";
 app.use("/items", items)
 
+app.get("/images/:image", (req, res) => {
+  res.sendFile(process.cwd() + "/public/images/" + req.params.image);
+});
+
 app.use(handler);
 app.listen(PORT, () => console.log(`Port ${PORT} open.`));
